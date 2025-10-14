@@ -1,10 +1,8 @@
-import AppHeader from "../components/AppHeader";
 
 export default function Homepage() {
 
     return (
         <>
-            <AppHeader />
             <main>
                 <div className="container my-3">
 
