@@ -30,16 +30,16 @@ export default function ProductsPage({ productsEP }) {
 
                     {products.map(product =>
                         <div className="col my-3" key={product.id}>
-                            <div className="card h-100  position-relative">
+                            <div className="card h-100  ">
                                 <div className="card-header">
-                                    <h3>{product.title}</h3>
+                                    <h3 className="text-truncate d-block">{product.title}</h3>
                                 </div>
-                                <div className="card-body">
-                                    <p className="text-no-wrap text-hidden">
+                                <div className="card-body position-relative">
+                                    <p className="text-truncate text-hidden">
                                         {product.description}
                                     </p>
-                                    <span className="d-block"> {product.price} </span>
-                                    <span className="d-block"> {product.rating.rate} </span>
+                                    <span className="d-block"> <i className="bi bi-currency-euro"></i>{product.price} </span>
+                                    <span className="d-block text-warning"> <i className="bi bi-star-fill me-1"></i> {product.rating.rate}</span>
                                     <div className="badge btn btn-primary position-absolute top-0 end-0"> {product.category}</div>
                                 </div>
                             </div>
