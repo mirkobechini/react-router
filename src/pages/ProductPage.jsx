@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 
 import axios from 'axios'
 import ProductCard from "../components/ProductCard"
+import { Hourglass } from 'ldrs/react'
 
 export default function ProductPage() {
 
@@ -42,7 +43,19 @@ export default function ProductPage() {
                 {product != null ?
                     <ProductCard product={product} />
                     :
-                    <div className="loading">Loading...</div>
+                    <div>
+                        <div className="container text-center">
+                            <Hourglass
+                                size="200"
+                                bgOpacity="0.1"
+                                speed="1.75"
+                                color="white"
+                            />
+                        </div>
+                        <div className=" container text-center mt-3 fs-2">
+                            Loading...
+                        </div>
+                    </div>
                 }
             </div>
         </main>
