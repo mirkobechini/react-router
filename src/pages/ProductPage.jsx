@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import axios from 'axios'
 import ProductCard from "../components/ProductCard"
@@ -7,16 +7,23 @@ import ProductCard from "../components/ProductCard"
 export default function ProductPage() {
 
     const { id } = useParams()
+    const navigate = useNavigate()
     const [product, setProduct] = useState(null)
     const endpoint = `https://fakestoreapi.com/products/${id}`
 
     function fetchData(endpoint) {
         axios.get(endpoint)
             .then(res => {
+                if (res.data === "") {
+                    throw new Error("Prodotto non trovato");
+                }
                 setProduct(res.data)
+                console.log(`sono io:${res.data}`);
+
             })
             .catch(err => {
-                console.error(err);
+                console.error(`sono err: ${err}`);
+                navigate(-1)
 
             })
     }
