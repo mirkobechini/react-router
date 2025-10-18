@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductPreviewCard from "../components/ProductPreviewCard";
 
 
 export default function ProductsPage({ productsEP }) {
@@ -31,7 +31,7 @@ export default function ProductsPage({ productsEP }) {
 
                     {products.map(product =>
                         <div className="col my-3" key={product.id}>
-                            <ProductCard product={product}/>
+                            <ProductPreviewCard product={product} />
                         </div>
                     )}
                 </div>
