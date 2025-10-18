@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 import axios from 'axios'
 import ProductCard from "../components/ProductCard"
@@ -37,11 +37,13 @@ export default function ProductPage() {
     return (
         <main>
             <div className="bg-primary-subtle vh-100">
-                <div className="container-fluid text-center mb-4">
+                <div className="container-fluid text-center mb-4 d-flex justify-content-center align-items-center gap-4">
+                    <button className={`btn rounded-pill bg-primary p-0 px-2 ${id==1&&"disabled"}`}onClick={() => navigate(`/products/${Number(id)-1}`)}><i className="bi bi-caret-left fs-3"></i></button>
                     <h1> Here is your product</h1>
+                    <button className="btn rounded-pill bg-primary p-0 px-2" onClick={() => navigate(`/products/${Number(id)+1}`)}><i className="bi bi-caret-right fs-3"></i></button>
                 </div>
                 {product != null ?
-                    <ProductCard product={product} />
+                        <ProductCard product={product} />
                     :
                     <div>
                         <div className="container text-center">
