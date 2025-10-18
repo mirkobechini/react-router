@@ -1,12 +1,12 @@
 export default function ProductCard({product}){
     
     return(
-        <div className="card col-12 col-sm-5 col-lg-3 mx-auto">
+        <div className="card col-12 col-sm-5 col-lg-2 mx-auto">
                 <div className="card-header">
                     <h3>{product.title}</h3>
                 </div>
-                <div className="ratio ratio-1x1 my-3">
-                    <img src={product.image} className="card-img-top" style={{ objectFit: "contain" }}></img>
+                <div className="ratio ratio-1x1 bg-danger-subtle">
+                    <img src={product.image} className="card-img-top p-2" style={{ objectFit: "contain" }}></img>
                 </div>
                 <div className="card-body position-relative">
                     <div className="badge btn btn-primary position-absolute top-0 start-0"> {product.category}</div>

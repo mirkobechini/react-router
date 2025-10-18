@@ -30,7 +30,7 @@ export default function ProductPage() {
     return (
         <main>
             <div className="bg-primary-subtle vh-100">
-                <div className="container-fluid text-center">
+                <div className="container-fluid text-center mb-4">
                     <h1> Here is your product</h1>
                 </div>
                 {product != null ?
