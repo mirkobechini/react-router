@@ -18,11 +18,10 @@ export default function ProductPage() {
                     throw new Error("Prodotto non trovato");
                 }
                 setProduct(res.data)
-                console.log(`sono io:${res.data}`);
 
             })
             .catch(err => {
-                console.error(`sono err: ${err}`);
+                console.error(err);
                 navigate(-1)
 
             })

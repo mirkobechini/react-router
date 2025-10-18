@@ -11,7 +11,6 @@ export default function ProductsPage({ productsEP }) {
     function fetchData() {
         axios.get(productsEP)
             .then(res => {
-                console.log(res.data[0]);
                 setProducts(res.data)
             })
             .catch(err => {
