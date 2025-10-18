@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useEffect } from "react"
 //pages
 import Homepage from "./pages/Homepage"
 import AboutUsPage from "./pages/AboutUsPage"
@@ -13,6 +14,13 @@ const productsEP = "https://fakestoreapi.com/products"
 
 function App() {
 
+
+    useEffect(() => {
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+    return () => {
+      document.documentElement.removeAttribute("data-bs-theme");
+    };
+  }, []);
 
   return (
 
