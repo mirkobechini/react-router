@@ -1,9 +1,9 @@
-export default function ProductCard({ product }) {
-    return (
-        <>
-            <div className="card h-100">
+export default function ProductCard({product}){
+    
+    return(
+        <div className="card col-12 col-sm-5 col-lg-3 mx-auto">
                 <div className="card-header">
-                    <h3 className="text-truncate d-block">{product.title}</h3>
+                    <h3>{product.title}</h3>
                 </div>
                 <div className="ratio ratio-1x1 my-3">
                     <img src={product.image} className="card-img-top" style={{ objectFit: "contain" }}></img>
@@ -17,6 +17,5 @@ export default function ProductCard({ product }) {
                     <span className="d-block text-warning"> <i className="bi bi-star-fill me-1"></i> {product.rating.rate}</span>
                 </div>
             </div>
-        </>
     )
 }
